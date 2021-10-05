@@ -1,38 +1,292 @@
-.App {
+.page {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5%;
+  align-self: center;
+  
+  width: 90%;
+  font-family: 'Poppins', sans-serif;
+}
+
+.page__title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+  height: 32px;
+  margin-top: 24px;
+  margin-left: 134px;
+  
+}
+
+.page__title--icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 16px;
+}
+
+.page__title--title {
+  line-height: 32px;
+  font-size: 24;
+  font-weight: 700;
+  font-style: bold;
+  color: #212121;
+}
+
+.page__line {
+  margin-top: 18px;
+  height: 0px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #E0E0E0;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.25);
+}
+
+.page__search {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+  height: 35px;
+  margin-top: 41px;
+  margin-left: 349px;
+  margin-right: 349px;
+  border-style: solid;
+  border-color: #E0E0E0;
+  border-width: 1px;
+  border-radius: 8px;
+}
+
+.page__search--icon {
+  
+  height: 16px;
+  width:16px;
+  margin-left: 9px;
+}
+
+.page__search--input {
+  color: #E0E0E0;
+  margin-left: 9px;
+  width:100%;
+}
+
+.main__cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 54px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #74CB48;
+  border-radius: 12px;
+  width:300px;
+  height: 400px;
+  
+  box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.25)
+}
+
+.card-name-number {
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  background-color: #74CB48;
+  margin-left:24px;
+  margin-right: 24px;
+  margin-top: 24px;
+}
+
+.name {
+  line-height: 32px;
+  font-size: 24px;
+  color: white;
+  background-color: #74CB48;
+  width: 215px;
+}
+
+.number {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 32px;
+  font-size: 12px;
+  color: white;
+  background-color: #74CB48;
+  width: 32px;
+}
+
+.card-information {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin-left:5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  border-radius: 8px;
+  height: 240px;
+}
+
+.hole {
+  height: 50px;
+}
+
+.image {
+  width: 150px;
+  height: 150px;
+  align-self: center;
+  position: absolute;
+  margin-top: -100px;
+}
+
+.content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.type {
+  color:white;
+  display: flex;
+  justify-content: center;
+  height: 20px;
+}
+
+.type-1 {
+  margin-left: 8px;
+  margin-right: 8px;
+  border-radius: 10px;
+  padding: 2px 8px;
+  line-height: 16px;
+  font-weight: 700;
+  font-size: 10px;
+  text-align: center;
+  background-color: #74CB48;
+}
+
+.type-2 {
+  margin-left: 8px;
+  margin-right: 8px;
+  border-radius: 10px;
+  padding: 2px 8px;
+  line-height: 16px;
+  font-weight: 700;
+  font-size: 10px;
+  text-align: center;
+  background-color: #A43E9E;
+}
+
+.info-about {
+  color: #74CB48;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 18px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.measures {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 48px;
+  margin-top: 16px;
+  margin-left:68px;
+  margin-right: 68px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.weight {
   display: flex;
   flex-direction: column;
+}
+
+.weight-icon-number {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
+  height: 36px;
+}
+
+.value {
+  margin-left: 8px;
+  line-height: 16px;
+  font-size: 10px;
+  text-align: justify;
+  color: #212121;
+}
+
+.weight-name {
+  line-height: 12px;
+  color: #666666;
+  font-size: 8px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.line {
+  background-color: #E0E0E0;
+  width: 1px;
+  height: 100%;
+}
+
+.height {
+  background-color: black;
+  width:54px;
+}
+
+.text {
+  text-align: justify;
+  font-weight: 400;
+  font-size: 10px;
+  font-style: normal;
+  color: #212121;
+  line-height: 16px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top:16px;
+}
+
+.page__line--2 {
+  margin-top: 34px;
+  height: 0px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #E0E0E0;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.25);
+}
+
+.page__footer {
+  display: flex;
+  flex-direction: row;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  height: 42px;
+  margin-top: 11px;
+  margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.page__footer--giticon {
+  height: 30px;
+  width: 30px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.page__footer--line {
+  height: 26px;
+  width: 0px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #E0E0E0;
+  margin-left: 7px;
+  margin-right: 0px;
 }
+
+
+
+
