@@ -1,0 +1,12 @@
+  
+  .page__search--icon {
+    height: 16px;
+    width:16px;
+    margin-left: 9px;
+  }
+  
+  .page__search--input {
+    color: black;
+    margin-left: 9px;
+    width:100%;
+  }

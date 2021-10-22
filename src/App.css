@@ -1,45 +1,127 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center, input,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+input,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 .page {
@@ -47,20 +129,19 @@ table {
   flex-direction: column;
   margin-left: 5%;
   align-self: center;
-  
+
   width: 90%;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .page__title {
   display: flex;
   flex-direction: row;
   align-items: center;
-  
+
   height: 32px;
   margin-top: 24px;
   margin-left: 134px;
-  
 }
 
 .page__title--icon {
@@ -82,36 +163,35 @@ table {
   height: 0px;
   border-width: 1px;
   border-style: solid;
-  border-color: #E0E0E0;
-  box-shadow: 2px 2px 4px rgba(0,0,0,0.25);
+  border-color: #e0e0e0;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
 }
 
 .page__search {
   display: flex;
   flex-direction: row;
   align-items: center;
-  
+
   height: 35px;
   margin-top: 41px;
   margin-left: 349px;
   margin-right: 349px;
   border-style: solid;
-  border-color: #E0E0E0;
+  border-color: #e0e0e0;
   border-width: 1px;
   border-radius: 8px;
 }
 
 .page__search--icon {
-  
   height: 16px;
-  width:16px;
+  width: 16px;
   margin-left: 9px;
 }
 
 .page__search--input {
   color: black;
   margin-left: 9px;
-  width:100%;
+  width: 100%;
 }
 
 .main__cards {
@@ -126,36 +206,61 @@ table {
   flex-direction: column;
   justify-content: space-between;
   border-radius: 12px;
-  width:300px;
+  width: 300px;
   height: 400px;
-  box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.25)
+  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 .electric {
-  background-color: #F9CF30 ;
-  color: #F9CF30;
+  background-color: #f9cf30;
+  color: #f9cf30;
 }
 
 .grass {
-  background-color: #74CB48;
-  color: #74CB48;
+  background-color: #74cb48;
+  color: #74cb48;
 }
 
 .water {
-  background-color: #6493EB ;
-  color: #6493EB
+  background-color: #6493eb;
+  color: #6493eb;
 }
 
 .poison {
-  background-color: #A43E9E;
-  color: #A43E9E;
+  background-color: #a43e9e;
+  color: #a43e9e;
+}
+
+.fire {
+  background-color: #f57d31;
+  color: #f57d31;
+}
+
+.bug {
+  background-color: #a7b723;
+  color: #a7b723;
+}
+
+.flying {
+  background-color: #a891ec;
+  color: #a891ec;
+}
+
+.ghost {
+  background-color: #70559b;
+  color: #70559b;
+}
+
+.normal {
+  background-color: #666666;
+  color: #666666;
 }
 
 .card-name-number {
   font-weight: 700;
   display: flex;
   justify-content: space-between;
-  margin-left:24px;
+  margin-left: 24px;
   margin-right: 24px;
   margin-top: 24px;
 }
@@ -182,7 +287,7 @@ table {
   display: flex;
   flex-direction: column;
   background-color: white;
-  margin-left:5px;
+  margin-left: 5px;
   margin-right: 5px;
   margin-bottom: 5px;
   border-radius: 8px;
@@ -208,7 +313,6 @@ table {
 }
 
 .type {
-  
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -228,7 +332,6 @@ table {
 }
 
 .info-about {
-  
   font-size: 14px;
   font-weight: 700;
   line-height: 16px;
@@ -244,7 +347,7 @@ table {
   justify-content: space-between;
   height: 48px;
   margin-top: 16px;
-  margin-left:68px;
+  margin-left: 68px;
   margin-right: 68px;
 }
 
@@ -254,7 +357,7 @@ table {
 }
 
 .weight-icon-number {
-  display:flex;
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -278,14 +381,14 @@ table {
 }
 
 .line {
-  background-color: #E0E0E0;
+  background-color: #e0e0e0;
   width: 1px;
   height: 100%;
 }
 
 .height {
   background-color: black;
-  width:54px;
+  width: 54px;
 }
 
 .text {
@@ -297,7 +400,7 @@ table {
   line-height: 16px;
   margin-left: 20px;
   margin-right: 20px;
-  margin-top:16px;
+  margin-top: 16px;
 }
 
 .page__line--2 {
@@ -305,8 +408,8 @@ table {
   height: 0px;
   border-width: 1px;
   border-style: solid;
-  border-color: #E0E0E0;
-  box-shadow: 2px 2px 4px rgba(0,0,0,0.25);
+  border-color: #e0e0e0;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
 }
 
 .page__footer {
@@ -330,11 +433,7 @@ table {
   width: 0px;
   border-style: solid;
   border-width: 1px;
-  border-color: #E0E0E0;
+  border-color: #e0e0e0;
   margin-left: 7px;
   margin-right: 0px;
 }
-
-
-
-
