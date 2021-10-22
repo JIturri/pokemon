@@ -8,19 +8,21 @@ Buscar con mayúsculas o minúsculas.
 Quitar el botón buscar. Búsqueda automática.
 
 COMPONENTES
+  -título OK
+  -buscador OK
+  -main cards
+  -card
+  -footer
 ---------------------------------------------------------*/
 
 import React, { useState, useEffect } from "react";
 import "./App.css";
-//import {pokelist} from './pokelist.js';
 import peso from "./weight.png";
 import altura from "./height.png";
-import pokeball from "./Pokeball.png";
-import lupa from "./comp_buscador/lupa.png";
 import giticon from "./giticon.png";
 import pokeapi from "./pokeapi.png";
-//import Buscador from "./comp_buscador/buscar.js";
-//import pokName from "./comp_buscador/buscar.js"
+import { Search } from "./comp_search/buscar";
+import { Title } from "./comp_title/title";
 
 function App() {
   //------------------------------------------------------
@@ -35,6 +37,8 @@ function App() {
   const [pokeHeight, setPokeHeight] = useState();
   const [pokeImg, setPokeImg] = useState("");
   const [pokeType, setPokeType] = useState([]);
+
+  const handleEvent = (e) => setPokName(e.target.value);
 
   useEffect(() => {
     fetchInitialData();
@@ -90,19 +94,11 @@ function App() {
   return (
     <div className="page">
       <div className="page__title">
-        <img className="page__title--icon" src={pokeball} alt="pokeball"></img>
-        <div className="page__title--title">My Pokédex</div>
+        <Title />
       </div>
       <div className="page__line"></div>
       <div className="page__search">
-        <img className="page__search--icon" src={lupa} alt="lupa"></img>
-        <input
-          type="text"
-          className="page__search--input"
-          onChange={(event) => setPokName(event.target.value)}
-        />
-        {/*<Buscador name={setPokName}/>*/}
-        <button onClick={obtenerDatos}>buscar</button>
+        <Search type="text" inputfunc={handleEvent} clicfunc={obtenerDatos} />
       </div>
       <div className="main__cards">
         <div className={`card ${arrayfin[0]}`}>

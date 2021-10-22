@@ -144,20 +144,6 @@ table {
   margin-left: 134px;
 }
 
-.page__title--icon {
-  width: 24px;
-  height: 24px;
-  margin-right: 16px;
-}
-
-.page__title--title {
-  line-height: 32px;
-  font-size: 24;
-  font-weight: 700;
-  font-style: bold;
-  color: #212121;
-}
-
 .page__line {
   margin-top: 18px;
   height: 0px;
@@ -180,18 +166,6 @@ table {
   border-color: #e0e0e0;
   border-width: 1px;
   border-radius: 8px;
-}
-
-.page__search--icon {
-  height: 16px;
-  width: 16px;
-  margin-left: 9px;
-}
-
-.page__search--input {
-  color: black;
-  margin-left: 9px;
-  width: 100%;
 }
 
 .main__cards {
