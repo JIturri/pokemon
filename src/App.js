@@ -17,11 +17,11 @@ COMPONENTES
 
 import React, { useState, useEffect } from "react";
 import "./App.css";
-
 import { Search } from "./comp_search/buscar";
 import { Title } from "./comp_title/title";
 import { Card } from "./comp_card/card";
 import { Footer } from "./comp_footer/footer";
+import { FirstOutput } from "./comp_firstoutput/firstoutput";
 
 function App() {
   //------------------------------------------------------
@@ -36,6 +36,7 @@ function App() {
   const [pokeHeight, setPokeHeight] = useState();
   const [pokeImg, setPokeImg] = useState("");
   const [pokeType, setPokeType] = useState([]);
+  const [initial, setInitial] = useState(true);
 
   const handleEvent = (e) => setPokName(e.target.value);
 
@@ -65,6 +66,7 @@ function App() {
     setPokeWeight(pokeArray.weight);
     setPokeType(pokeArray.types);
     setPokeImg(pokeArray.sprites.front_default);
+    setInitial(false);
   };
 
   const obtenerDatos = () => {
@@ -74,6 +76,7 @@ function App() {
         pokUrl = pokListArr[n].url;
         //console.log(pokUrl);
         fetchPok();
+
         break;
       }
     }
@@ -96,42 +99,21 @@ function App() {
       <div className="page__line"></div>
       <Search type="text" inputfunc={handleEvent} clicfunc={obtenerDatos} />
       <div className="main__cards">
-        <Card
-          typeOne={arrayfin[0]}
-          name={pokeName}
-          id={pokeId}
-          height={pokeHeight}
-          weight={pokeWeight}
-          imgUrl={pokeImg}
-          array={arrayfin}
-        />
-        <Card
-          typeOne={arrayfin[0]}
-          name={pokeName}
-          id={pokeId}
-          height={pokeHeight}
-          weight={pokeWeight}
-          imgUrl={pokeImg}
-          array={arrayfin}
-        />
-        <Card
-          typeOne={arrayfin[0]}
-          name={pokeName}
-          id={pokeId}
-          height={pokeHeight}
-          weight={pokeWeight}
-          imgUrl={pokeImg}
-          array={arrayfin}
-        />
-        <Card
-          typeOne={arrayfin[0]}
-          name={pokeName}
-          id={pokeId}
-          height={pokeHeight}
-          weight={pokeWeight}
-          imgUrl={pokeImg}
-          array={arrayfin}
-        />
+        {initial ? (
+          <FirstOutput />
+        ) : (
+          <>
+            <Card
+              typeOne={arrayfin[0]}
+              name={pokeName}
+              id={pokeId}
+              height={pokeHeight}
+              weight={pokeWeight}
+              imgUrl={pokeImg}
+              array={arrayfin}
+            />
+          </>
+        )}
       </div>
       <div className="page__line--2"></div>
       <Footer />
