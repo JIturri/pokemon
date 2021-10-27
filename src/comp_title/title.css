@@ -1,3 +1,13 @@
+.page__title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  height: 32px;
+  margin-top: 24px;
+  margin-left: 134px;
+}
+
 .page__title--icon {
   width: 24px;
   height: 24px;

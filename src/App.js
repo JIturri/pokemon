@@ -10,19 +10,18 @@ Quitar el botón buscar. Búsqueda automática.
 COMPONENTES
   -título OK
   -buscador OK
-  -main cards
-  -card
-  -footer
+  -main cards OK
+  -card OK
+  -footer OK
 ---------------------------------------------------------*/
 
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import peso from "./weight.png";
-import altura from "./height.png";
-import giticon from "./giticon.png";
-import pokeapi from "./pokeapi.png";
+
 import { Search } from "./comp_search/buscar";
 import { Title } from "./comp_title/title";
+import { Card } from "./comp_card/card";
+import { Footer } from "./comp_footer/footer";
 
 function App() {
   //------------------------------------------------------
@@ -93,61 +92,49 @@ function App() {
   //------------------------------------------------------------
   return (
     <div className="page">
-      <div className="page__title">
-        <Title />
-      </div>
+      <Title />
       <div className="page__line"></div>
-      <div className="page__search">
-        <Search type="text" inputfunc={handleEvent} clicfunc={obtenerDatos} />
-      </div>
+      <Search type="text" inputfunc={handleEvent} clicfunc={obtenerDatos} />
       <div className="main__cards">
-        <div className={`card ${arrayfin[0]}`}>
-          <div className="card-name-number">
-            <div className="name">{pokeName}</div>
-            <div className="number">{`#${pokeId}`}</div>
-          </div>
-          <div className="card-information">
-            <div class="hole"></div>
-            <img className="image" src={`${pokeImg}`} alt="imagen"></img>
-            <div className="content">
-              <div className="type">
-                {arrayfin.map((poketype) => {
-                  return (
-                    <div className={`${poketype} type-card`}>{poketype}</div>
-                  );
-                })}
-              </div>
-              <div className="info-about">About</div>
-              <div className="measures">
-                <div className="weight">
-                  <div className="weight-icon-number">
-                    <img className="icon" src={peso} alt="pesoicono"></img>
-                    <div className="value">{`${pokeWeight} kg`}</div>
-                  </div>
-                  <div className="weight-name">Weight</div>
-                </div>
-                <div className="line"></div>
-                <div className="weight">
-                  <div className="weight-icon-number">
-                    <img className="icon" src={altura} alt="alturaicono"></img>
-                    <div className="value">{`${pokeHeight} m`}</div>
-                  </div>
-                  <div className="weight-name">Height</div>
-                </div>
-              </div>
-              <div className="text">
-                {"Aquí va la descripción de cada Pokemon"}
-              </div>
-            </div>
-          </div>
-        </div>
+        <Card
+          typeOne={arrayfin[0]}
+          name={pokeName}
+          id={pokeId}
+          height={pokeHeight}
+          weight={pokeWeight}
+          imgUrl={pokeImg}
+          array={arrayfin}
+        />
+        <Card
+          typeOne={arrayfin[0]}
+          name={pokeName}
+          id={pokeId}
+          height={pokeHeight}
+          weight={pokeWeight}
+          imgUrl={pokeImg}
+          array={arrayfin}
+        />
+        <Card
+          typeOne={arrayfin[0]}
+          name={pokeName}
+          id={pokeId}
+          height={pokeHeight}
+          weight={pokeWeight}
+          imgUrl={pokeImg}
+          array={arrayfin}
+        />
+        <Card
+          typeOne={arrayfin[0]}
+          name={pokeName}
+          id={pokeId}
+          height={pokeHeight}
+          weight={pokeWeight}
+          imgUrl={pokeImg}
+          array={arrayfin}
+        />
       </div>
       <div className="page__line--2"></div>
-      <div className="page__footer">
-        <img className="page__footer--giticon" src={giticon} alt="git"></img>
-        <div className="page__footer--line"></div>
-        <img className="page__footer--pokeiapi" src={pokeapi} alt="pok"></img>
-      </div>
+      <Footer />
     </div>
   );
 }
