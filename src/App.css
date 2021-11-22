@@ -102,6 +102,8 @@ section {
   display: block;
 }
 body {
+  display: flex;
+  justify-content: center;
   line-height: 1;
 }
 ol,
@@ -126,11 +128,10 @@ table {
 
 .page {
   display: flex;
-  flex-direction: column;
-  margin-left: 5%;
-  align-self: center;
 
-  width: 90%;
+  flex-direction: column;
+
+  width: 1200px;
   font-family: "Poppins", sans-serif;
 }
 
@@ -144,10 +145,9 @@ table {
 }
 
 .main__cards {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
   margin-top: 54px;
+  display: flex;
+  justify-content: center;
 }
 
 .page__line--2 {

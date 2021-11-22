@@ -11,7 +11,7 @@ export const Search = (props) => (
         className="page__search--input"
         onChange={props.inputfunc}
       />
-      <button onClick={props.clicfunc}>buscar</button>
+      {/*<button onClick={props.clicfunc}>buscar</button>*/}
     </div>
   </>
 );

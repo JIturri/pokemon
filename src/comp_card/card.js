@@ -1,13 +1,15 @@
 import peso from "./weight.png";
 import altura from "./height.png";
 import "./card.css";
+import firstCapital from "../functions/firstCapital";
+import strconcat from "../functions/idToString";
 
 export const Card = (props) => (
   <>
     <div className={`card ${props.typeOne}`}>
       <div className="card-name-number">
-        <div className="name">{props.name}</div>
-        <div className="number">{`#${props.id}`}</div>
+        <div className="name">{firstCapital(props.name)}</div>
+        <div className="number">{strconcat(props.id)}</div>
       </div>
       <div className="card-information">
         <div class="hole"></div>

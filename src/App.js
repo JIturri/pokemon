@@ -1,11 +1,11 @@
 /*--PENDIENTE------------------------------------------
-Mayúscula primera letra nombre.
-Imagen decente.
+Mayúscula primera letra nombre. OK
+Imagen decente. OK
 Salida inicial con 6 pokemons.
 Tipos - colores (TODOS).
-Ceros delante del Id.
-Buscar con mayúsculas o minúsculas.
-Quitar el botón buscar. Búsqueda automática.
+Ceros delante del Id.OK
+Buscar con mayúsculas o minúsculas. OK
+Quitar el botón buscar. Búsqueda automática. OK
 
 COMPONENTES
   -título OK
@@ -13,6 +13,9 @@ COMPONENTES
   -main cards OK
   -card OK
   -footer OK
+
+11_11 TAREAS
+  -Manejar busqueda errónea - Componente Error
 ---------------------------------------------------------*/
 
 import React, { useState, useEffect } from "react";
@@ -23,85 +26,59 @@ import { Card } from "./comp_card/card";
 import { Footer } from "./comp_footer/footer";
 import { FirstOutput } from "./comp_firstoutput/firstoutput";
 
+let pokeName = "o";
+let pokeId = 0;
+let pokeImg;
+let pokeWeight;
+let pokeHeight;
+let pokeType = [];
+
 function App() {
-  //------------------------------------------------------
-  let pokUrl = "";
   let arrayfin = [];
 
-  const [pokListArr, setPokListArr] = useState([]);
   const [pokName, setPokName] = useState("");
-  const [pokeName, setPokeName] = useState("");
-  const [pokeId, setPokeId] = useState();
-  const [pokeWeight, setPokeWeight] = useState();
-  const [pokeHeight, setPokeHeight] = useState();
-  const [pokeImg, setPokeImg] = useState("");
-  const [pokeType, setPokeType] = useState([]);
-  const [initial, setInitial] = useState(true);
 
-  const handleEvent = (e) => setPokName(e.target.value);
+  const handleEvent = (e) => {
+    setPokName(e.target.value.toLowerCase());
+  };
 
   useEffect(() => {
-    fetchInitialData();
-    //console.log('useEffect ejecutado')
-  }, []);
-
-  const fetchInitialData = async () => {
-    const initialData = await fetch(
-      "https://pokeapi.co/api/v2/pokemon?limit=1120&offset=0"
-    );
-    const initialPok = await initialData.json();
-    setPokListArr(initialPok.results);
-  };
-
-  /*-------Buscador input----------------*/
-
-  /*---------------------------------*/
-
-  const fetchPok = async () => {
-    const data = await fetch(pokUrl);
-    const pokeArray = await data.json();
-    setPokeName(pokeArray.name);
-    setPokeId(pokeArray.id);
-    setPokeHeight(pokeArray.height);
-    setPokeWeight(pokeArray.weight);
-    setPokeType(pokeArray.types);
-    setPokeImg(pokeArray.sprites.front_default);
-    setInitial(false);
-  };
-
-  const obtenerDatos = () => {
-    //console.log(`obtener datos de ${pokName}`);
-    for (let n = 0; n <= 1118; n++) {
-      if (pokListArr[n].name === pokName) {
-        pokUrl = pokListArr[n].url;
-        //console.log(pokUrl);
-        fetchPok();
-
-        break;
-      }
+    console.log("render");
+    if (pokName.length > 3) {
+      fetchPok(pokName);
     }
+    console.log(pokName);
+  }, [pokName]);
+
+  const fetchPok = async (name) => {
+    const data = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
+    const pokeArray = await data.json();
+    pokeName = pokeArray.name;
+    pokeId = pokeArray.id;
+    pokeHeight = pokeArray.height;
+    pokeWeight = pokeArray.weight;
+    pokeType = pokeArray.types;
+    pokeImg = pokeArray.sprites.other["official-artwork"].front_default;
+    setPokName("I");
+    console.log(pokName);
   };
 
   const typeArray = (array) => {
     array.map((i) => {
-      return (
-        //console.log(i.type.name)
-        arrayfin.push(i.type.name)
-      );
+      return arrayfin.push(i.type.name);
     });
   };
   typeArray(pokeType);
 
-  //------------------------------------------------------------
   return (
     <div className="page">
       <Title />
       <div className="page__line"></div>
-      <Search type="text" inputfunc={handleEvent} clicfunc={obtenerDatos} />
+      <Search type="text" inputfunc={handleEvent} />
       <div className="main__cards">
-        {initial ? (
+        {pokName === "" ? (
           <FirstOutput />
-        ) : (
+        ) : pokName !== "" ? (
           <>
             <Card
               typeOne={arrayfin[0]}
@@ -113,6 +90,8 @@ function App() {
               array={arrayfin}
             />
           </>
+        ) : (
+          <h1>Error</h1>
         )}
       </div>
       <div className="page__line--2"></div>

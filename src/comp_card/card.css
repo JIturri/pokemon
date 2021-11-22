@@ -53,6 +53,21 @@
   color: #666666;
 }
 
+.fighting {
+  background-color: #b80404;
+  color: #b80404;
+}
+
+.ground {
+  background-color: #b84c04;
+  color: #b84c04;
+}
+
+.rock {
+  background-color: #69615b;
+  color: #69615b;
+}
+
 .card-name-number {
   font-weight: 700;
   display: flex;
