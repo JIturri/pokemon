@@ -49,23 +49,63 @@
 }
 
 .normal {
-  background-color: #666666;
-  color: #666666;
+  background-color: #aaa67f;
+  color: #aaa67f;
 }
 
 .fighting {
-  background-color: #b80404;
-  color: #b80404;
+  background-color: #c12239;
+  color: #c12239;
 }
 
 .ground {
-  background-color: #b84c04;
-  color: #b84c04;
+  background-color: #dec16b;
+  color: #dec16b;
 }
 
 .rock {
-  background-color: #69615b;
-  color: #69615b;
+  background-color: #b69e31;
+  color: #b69e31;
+}
+
+.steel {
+  background-color: #b7b9d0;
+  color: #b7b9d0;
+}
+
+.psychic {
+  background-color: #fb5584;
+  color: #fb5584;
+}
+
+.ice {
+  background-color: #9ad6df;
+  color: #9ad6df;
+}
+
+.dragon {
+  background-color: #7037ff;
+  color: #7037ff;
+}
+
+.dark {
+  background-color: #75574c;
+  color: #75574c;
+}
+
+.fairy {
+  background-color: #e69eac;
+  color: #e69eac;
+}
+
+.unknown {
+  background-color: #000000;
+  color: #000000;
+}
+
+.shadow {
+  background-color: #444444;
+  color: #444444;
 }
 
 .card-name-number {

@@ -1,8 +1,8 @@
 /*--PENDIENTE------------------------------------------
 Mayúscula primera letra nombre. OK
 Imagen decente. OK
-Salida inicial con 6 pokemons.
-Tipos - colores (TODOS).
+Salida inicial con 6 pokemons de API
+Tipos - colores (TODOS). OK
 Ceros delante del Id.OK
 Buscar con mayúsculas o minúsculas. OK
 Quitar el botón buscar. Búsqueda automática. OK
@@ -24,18 +24,18 @@ import { Search } from "./comp_search/buscar";
 import { Title } from "./comp_title/title";
 import { Card } from "./comp_card/card";
 import { Footer } from "./comp_footer/footer";
-import { FirstOutput } from "./comp_firstoutput/firstoutput";
+//import { FirstOutput } from "./comp_firstoutput/firstoutput";
+import { Salidainicial } from "./comp_salidainicial/salidainicial";
 
-let pokeName = "o";
+let pokeName;
 let pokeId = 0;
 let pokeImg;
 let pokeWeight;
 let pokeHeight;
 let pokeType = [];
+let firstType = "";
 
 function App() {
-  let arrayfin = [];
-
   const [pokName, setPokName] = useState("");
 
   const handleEvent = (e) => {
@@ -43,32 +43,35 @@ function App() {
   };
 
   useEffect(() => {
-    console.log("render");
     if (pokName.length > 3) {
       fetchPok(pokName);
     }
-    console.log(pokName);
   }, [pokName]);
 
   const fetchPok = async (name) => {
+    pokeName = "";
+    pokeId = 0;
+    pokeImg = "";
+    pokeWeight = 0;
+    pokeHeight = 0;
+    pokeType = [];
+    firstType = "";
     const data = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
     const pokeArray = await data.json();
     pokeName = pokeArray.name;
     pokeId = pokeArray.id;
     pokeHeight = pokeArray.height;
     pokeWeight = pokeArray.weight;
-    pokeType = pokeArray.types;
+    pokeType = [];
+    pokeArray.types.map((i) => {
+      return pokeType.push(i.type.name);
+    });
+    firstType = pokeType[0];
     pokeImg = pokeArray.sprites.other["official-artwork"].front_default;
-    setPokName("I");
-    console.log(pokName);
+    setPokName("found");
   };
 
-  const typeArray = (array) => {
-    array.map((i) => {
-      return arrayfin.push(i.type.name);
-    });
-  };
-  typeArray(pokeType);
+  console.log(pokeName);
 
   return (
     <div className="page">
@@ -77,19 +80,19 @@ function App() {
       <Search type="text" inputfunc={handleEvent} />
       <div className="main__cards">
         {pokName === "" ? (
-          <FirstOutput />
+          <Salidainicial />
         ) : pokName !== "" ? (
-          <>
+          <div className="cardContainer">
             <Card
-              typeOne={arrayfin[0]}
+              typeOne={firstType}
               name={pokeName}
               id={pokeId}
               height={pokeHeight}
               weight={pokeWeight}
               imgUrl={pokeImg}
-              array={arrayfin}
+              array={pokeType}
             />
-          </>
+          </div>
         ) : (
           <h1>Error</h1>
         )}

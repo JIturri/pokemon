@@ -1,6 +1,9 @@
 .firstOutputContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  row-gap: 20px;
-  justify-items: center;
+  width: 948px;
+  height: 820px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
 }

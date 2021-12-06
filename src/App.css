@@ -128,10 +128,8 @@ table {
 
 .page {
   display: flex;
-
   flex-direction: column;
-
-  width: 1200px;
+  width: 991px;
   font-family: "Poppins", sans-serif;
 }
 
@@ -145,9 +143,9 @@ table {
 }
 
 .main__cards {
-  margin-top: 54px;
   display: flex;
   justify-content: center;
+  margin-top: 54px;
 }
 
 .page__line--2 {
