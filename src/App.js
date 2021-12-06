@@ -26,6 +26,7 @@ import { Card } from "./comp_card/card";
 import { Footer } from "./comp_footer/footer";
 //import { FirstOutput } from "./comp_firstoutput/firstoutput";
 import { Salidainicial } from "./comp_salidainicial/salidainicial";
+import { FirstOutput } from "./comp_firstoutput/firstoutput";
 
 let pokeName;
 let pokeId = 0;
@@ -80,7 +81,7 @@ function App() {
       <Search type="text" inputfunc={handleEvent} />
       <div className="main__cards">
         {pokName === "" ? (
-          <Salidainicial />
+          <FirstOutput />
         ) : pokName !== "" ? (
           <div className="cardContainer">
             <Card
