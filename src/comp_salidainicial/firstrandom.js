@@ -8,7 +8,7 @@ let pokeHeight = 0;
 let pokeType = [];
 let firstType = "";
 
-export function Salidainicial() {
+export function FirstRandom() {
   const [pokeName, setPokename] = useState("");
 
   const fetchPok = async (name) => {

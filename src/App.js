@@ -24,8 +24,7 @@ import { Search } from "./comp_search/buscar";
 import { Title } from "./comp_title/title";
 import { Card } from "./comp_card/card";
 import { Footer } from "./comp_footer/footer";
-//import { FirstOutput } from "./comp_firstoutput/firstoutput";
-import { Salidainicial } from "./comp_salidainicial/salidainicial";
+import { FirstRandom } from "./comp_salidainicial/firstrandom";
 import { FirstOutput } from "./comp_firstoutput/firstoutput";
 
 let pokeName;
@@ -72,8 +71,6 @@ function App() {
     setPokName("found");
   };
 
-  console.log(pokeName);
-
   return (
     <div className="page">
       <Title />
@@ -81,7 +78,7 @@ function App() {
       <Search type="text" inputfunc={handleEvent} />
       <div className="main__cards">
         {pokName === "" ? (
-          <FirstOutput />
+          <FirstRandom />
         ) : pokName !== "" ? (
           <div className="cardContainer">
             <Card
